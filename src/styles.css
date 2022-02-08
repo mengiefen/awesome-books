@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+body {
+  background: #f3ffff;
+  font-family: Lato, sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 30vw;
+  min-height: 90vh;
+  margin: 2.5vh auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 5px;
+  background: #def2f1;
+}
+
+.wrapper-book-entry {
+  text-align: start;
+  width: 100%;
+  margin: 10px 20px;
+}
+
+.book-entry {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+#book-shelf {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin: 10px 20px;
+}
+
+button {
+  margin-top: 12px;
+  padding: 8.5px;
+  min-width: 100px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  background: #2b7a78;
+  color: white;
+}
+
+input {
+  padding: 10px 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  width: 90%;
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: 400;
+  padding: 5px 0;
+}
+
+h4 span {
+  font-weight: 900;
+}
+
+.book-holder {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  background: #3aafa9;
+  color: white;
+}
+
+#btn-add {
+  width: 50%;
+  text-align: center;
+  background: #2b7a78;
+  color: white;
+}
