@@ -10,24 +10,28 @@
 </head>
 
 <body>
-  <h1>Awesome Book Store</h1>
   <div class="container">
+    <h1>All Awesome Books</h1>
     <div id="book-shelf"></div>
-
+    <div class="border"></div>
+    <div class="border"></div>
     <div class="wrapper-book-entry">
-      <ul class="book-entry">
-        <li><input type="text" id="title"
-            name="book-title" placeholder="Title">
-        </li>
-        <li>          
-          <input type="text" id="author" name="book-author"
-            placeholder="Author">
-        </li>
-      </ul>
-      <button id="btn-add" type="button">Add new book</button>
+      <h2 class="heading2">Add new books</h2>
+      <form>
+        <ul class="book-entry">
+          <li><input type="text" id="title" name="book-title"
+              placeholder="Title" required>
+          </li>
+          <li>
+            <input type="text" id="author" name="book-author"
+              placeholder="Author">
+          </li>
+        </ul>
+        <button id="btn-add" type="button">Add new book</button>
+      </form>
     </div>
   </div>
-  <script src="scripts/index.js"></script>
+  <script src="scripts/index2.js"></script>
 </body>
 
 </html>
