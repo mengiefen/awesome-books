@@ -70,7 +70,7 @@ To get a local copy up and running follow these simple example steps.
 
 ## Live Demo
 
-[![](https://img.shields.io/badge/Click-Here-blue)](demo website)
+[![](https://img.shields.io/badge/Click-Here-blue)](https://mengiefen.github.io/awesome-books/)
 
 ## 📝 License
 
