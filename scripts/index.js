@@ -46,19 +46,12 @@ const drawAllBooks = () => {
   });
 };
 Books = readBooks();
-
 // Write the books list into the localStorage
 const writeBooks = (Books) => {
   localStorage.setItem('books', JSON.stringify(Books));
 };
 
 drawAllBooks();
-
-const removeOne = (index) => {
-  Books = Books.filter((book) => book.id !== Number(index));
-  writeBooks(Books);
-  drawAllBooks();
-};
 
 const addBook = () => {
   const bTitle = titleInput.value;
@@ -77,11 +70,4 @@ const addBook = () => {
     authorInput.value = '';
   }
 };
-
-document.body.addEventListener('click', (evt) => {
-  if (evt.target.className === 'btn-remove') {
-    removeOne(evt.target.id);
-  }
-}, false);
-
 addButton.addEventListener('click', addBook);
