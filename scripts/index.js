@@ -50,6 +50,11 @@ Books = readBooks();
 const writeBooks = (Books) => {
   localStorage.setItem('books', JSON.stringify(Books));
 };
+const removeOne = (index) => {
+  Books = Books.filter((book) => book.id !== Number(index));
+  writeBooks(Books);
+  drawAllBooks();
+};
 
 drawAllBooks();
 
@@ -71,3 +76,9 @@ const addBook = () => {
   }
 };
 addButton.addEventListener('click', addBook);
+
+document.body.addEventListener('click', (evt) => {
+  if (evt.target.className === 'btn-remove') {
+    removeOne(evt.target.id);
+  }
+}, false);
