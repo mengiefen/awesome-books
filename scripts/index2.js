@@ -4,14 +4,15 @@ const titleInput = document.getElementById('title');
 const authorInput = document.getElementById('author');
 
 class Book {
-  constructor(title, author) {
-    this.id = Date.now();
+  constructor(title, author, id) {
+    this.id = id;
     this.title = title;
     this.author = author;
   }
 
   Books = []
 
+  // Add a single book and store in Book
   addBook() {
     this.Books.push({
       id: this.id,
@@ -21,6 +22,7 @@ class Book {
     return this.Books;
   }
 
+  // Read books from local storage
   readBooks() {
     const bookSaved = JSON.parse(localStorage.getItem('books'));
     if (bookSaved) {
@@ -28,12 +30,14 @@ class Book {
     }
     return this.Books;
   }
-  // Remove a single move from local storage
 
+  // Remove a single move from local storage
   removeBook(id) {
-    this.Books = this.Books.filter((book) => book.id !== id);
+    let Books = this.readBooks();
+    Books = Books.filter((book) => book.id !== Number(id));
+    this.Books = Books;
     this.writeBooks();
-    return this.Books;
+    return Books;
   }
 
   // Write the books list into the localStorage
@@ -42,6 +46,9 @@ class Book {
   }
 }
 
+const Buk = new Book();
+
+// Render each book with single row
 const displayBook = (book) => {
   const bookHolderHTML = `  
     <h4 class="book-title"><em>"${book.title}" by <span>${book.author}</span></em> </h4>  
@@ -52,9 +59,10 @@ const displayBook = (book) => {
   bookShelf.appendChild(bookHolder);
 };
 
+// Reads all books from local storage and renders the result
 const drawAllBooks = () => {
   bookShelf.innerHTML = '';
-  const Books = Book.readBooks();
+  const Books = Buk.readBooks();
   Books.forEach((element, index) => {
     if (index < 25) {
       displayBook(element);
@@ -62,11 +70,13 @@ const drawAllBooks = () => {
   });
 };
 
-//drawAllBooks();
+drawAllBooks();
 
 const addBook = () => {
+  Buk.title = titleInput.value;
+  Buk.author = titleInput.value;
+  Buk.id = Date.now();
   if (titleInput.value !== '' && authorInput.value !== '') {
-    const Buk = new Book(titleInput.value, authorInput.value);
     Buk.addBook();
     Buk.writeBooks();
     displayBook({
@@ -80,8 +90,9 @@ const addBook = () => {
 
 addButton.addEventListener('click', addBook);
 
-document.body.addEventListener('click', (evt) => {
-  if (evt.target.className === 'btn-remove') {
-    Book.removeBook(evt.target.id);
+document.body.addEventListener('click', (event) => {
+  if (event.target.className === 'btn-remove') {
+    Buk.removeBook(event.target.id);
+    drawAllBooks();
   }
 }, false);
