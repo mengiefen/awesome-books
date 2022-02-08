@@ -66,7 +66,7 @@ To get a local copy up and running follow these simple example steps.
 
 ## Acknowledgments
 
-- To my coding partners, morning session team,reviewers and standup team memebers.
+- To morning session team,reviewers and standup team memebers.
 
 ## Live Demo
 
