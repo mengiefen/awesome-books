@@ -39,6 +39,12 @@ html {
   scrollbar-color: #2b7a78 #e6e9e9;
 }
 
+@media screen and (max-width: 768px) {
+  .container {
+    margin: 1rem;
+  }
+}
+
 #book-shelf {
   display: flex;
   flex-direction: column;
@@ -64,7 +70,7 @@ html {
   width: 50%;
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width: 992px) {
   .wrapper-book-entry {
     width: 70%;
   }
@@ -90,7 +96,6 @@ form {
 }
 
 input {
-  border: none;
   outline: none;
   padding: 12px 5px;
   margin-bottom: 10px;
@@ -114,7 +119,7 @@ h4 span {
   justify-content: space-between;
   align-items: center;
   width: 92%;
-  padding: 0.5rem 2rem 0.5rem 4rem;
+  padding: 0.5rem 2rem 0.5rem 2rem;
   margin-bottom: 2.5px;
 }
 
