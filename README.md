@@ -6,7 +6,7 @@
 This project allows users to add/remove books from a list. This is done by using JavaScript objects and arrays. It has the feature to dynamically modify the DOM and add basic events.
 ## Screenshot
 
-![screenshot]()
+![screenshot](src/img/awesome-books.png)
 
 ## Built with
 
@@ -66,11 +66,11 @@ To get a local copy up and running follow these simple example steps.
 
 ## Acknowledgments
 
-- To my coding partners, morning session team,reviewers and standup team memebers.
+- To morning session team,reviewers and standup team memebers.
 
 ## Live Demo
 
-[![](https://img.shields.io/badge/Click-Here-blue)](demo website)
+[![](https://img.shields.io/badge/Click-Here-blue)](https://mengiefen.github.io/awesome-books/)
 
 ## 📝 License
 
