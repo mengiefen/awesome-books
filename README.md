@@ -6,7 +6,7 @@
 This project allows users to add/remove books from a list. This is done by using JavaScript objects and arrays. It has the feature to dynamically modify the DOM and add basic events.
 ## Screenshot
 
-![screenshot]()
+![screenshot](src/img/awesome-books.png)
 
 ## Built with
 
