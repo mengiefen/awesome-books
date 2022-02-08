@@ -1,13 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 body {
-  background: #f3ffff;
-  font-family: Lato, sans-serif;
+  background: #657786;
 }
 
 h1 {
-  text-align: center;
-  color: #2b7a78;
+  font-size: 2.8rem;
+  align-self: center;
+  color: #0e3a38;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 1.5rem auto;
+}
+
+html {
+  font-size: 10px;
+  font-family: Lato, sans-serif;
 }
 
 * {
@@ -17,20 +25,54 @@ h1 {
 }
 
 .container {
-  width: 30vw;
-  min-height: 90vh;
-  margin: 2.5vh auto;
+  margin: 2.5vh 20vh;
+  max-width: 95vw;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   border-radius: 5px;
-  background: #def2f1;
+  background: #e6e9e9;
+  padding: 0 4rem;
+  margin-bottom: 0;
+  margin-top: 0;
+  height: 100vh;
+  scrollbar-color: #2b7a78 #e6e9e9;
+}
+
+#book-shelf {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 2rem 0;
+  border: 3px solid #2b7a78;
+  height: 55vh;
+  overflow-y: scroll;
+  margin-bottom: 2rem;
+}
+
+.border {
+  width: 16rem;
+  align-self: center;
+  height: 2px;
+  background: #2b7a78;
+  margin-bottom: 2px;
 }
 
 .wrapper-book-entry {
-  text-align: start;
-  width: 100%;
-  margin: 10px 20px;
+  align-self: center;
+  width: 50%;
+}
+
+@media screen and (max-width:768px) {
+  .wrapper-book-entry {
+    width: 70%;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
 }
 
 .book-entry {
@@ -39,30 +81,22 @@ h1 {
   flex-direction: column;
 }
 
-#book-shelf {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-  margin: 10px 20px;
-}
-
-button {
-  margin-top: 12px;
-  padding: 8.5px;
-  min-width: 100px;
-  border-radius: 5.5px;
-  outline: none;
-  border: none;
-  background: #2b7a78;
-  color: white;
+.heading2 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  color: #2b7a78;
 }
 
 input {
-  padding: 10px 5px;
+  border: none;
+  outline: none;
+  padding: 12px 5px;
   margin-bottom: 10px;
   border-radius: 5px;
-  width: 90%;
+  width: 100%;
+  border: 0.5px solid lightgray;
 }
 
 h4 {
@@ -76,17 +110,39 @@ h4 span {
 }
 
 .book-holder {
-  width: 90%;
-  padding: 10px;
-  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 92%;
+  padding: 0.5rem 2rem 0.5rem 4rem;
+  margin-bottom: 2.5px;
+}
+
+.book-holder:nth-child(even) {
+  background: #d9dddd;
+}
+
+.book-holder:nth-child(odd) {
+  background: #bfcaca;
+}
+
+.btn-remove {
+  padding: 8.5px;
   border-radius: 5px;
-  background: #3aafa9;
-  color: white;
+  outline: none;
+  border: none;
+  background: #2b7a78;
+  color: #def2f1;
 }
 
 #btn-add {
-  width: 50%;
-  text-align: center;
+  padding: 12px;
+  align-self: flex-end;
   background: #2b7a78;
   color: white;
+}
+
+input:focus,
+input:active {
+  border-bottom: 3px solid #2b7a78;
 }
