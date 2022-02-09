@@ -138,6 +138,7 @@ h4 span {
   border: none;
   background: #2b7a78;
   color: #def2f1;
+  cursor: pointer;
 }
 
 #btn-add {
@@ -145,6 +146,7 @@ h4 span {
   align-self: flex-end;
   background: #2b7a78;
   color: white;
+  cursor: pointer;
 }
 
 input:focus,
