@@ -3,7 +3,7 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet) ![](https://img.shields.io/badge/MENGSTU-FENTAW-success)
 
 # Awesome Books
-This project allows users to add/remove books from a list. This is done by using JavaScript objects and arrays. It has the feature to dynamically modify the DOM and add basic events.
+This project allows users to add/remove books from a list. This is done by using JavaScript class. It has the feature to dynamically modify the DOM and add basic events.
 ## Screenshot
 
 ![screenshot](src/img/awesome-books.png)
@@ -29,7 +29,7 @@ To get a local copy up and running follow these simple example steps.
 - Open terminal
 - Change the directory you want put the repo
 - Then run
-  i. Run git clone <>
+  i. Run git clone git@github.com:mengiefen/awesome-books.git
   ii. cd repo-name/
 
 ### Install
