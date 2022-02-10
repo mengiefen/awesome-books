@@ -1,7 +1,11 @@
-const bookShelf = document.getElementById("book-shelf");
-const addButton = document.getElementById("btn-add");
-const titleInput = document.getElementById("title");
-const authorInput = document.getElementById("author");
+const bookShelf = document.getElementById('book-shelf');
+const addButton = document.getElementById('btn-add');
+const titleInput = document.getElementById('title');
+const authorInput = document.getElementById('author');
+const booklist = document.getElementById('book-list');
+const addNewBook = document.getElementById('add-new-book');
+const contactInfo = document.getElementById('contact');
+const newDate = document.getElementById('current-date');
 
 class Book {
   constructor(title, author, id) {
@@ -24,7 +28,7 @@ class Book {
 
   // Reads books from local storage
   readBooks() {
-    const bookSaved = JSON.parse(localStorage.getItem("books"));
+    const bookSaved = JSON.parse(localStorage.getItem('books'));
     if (bookSaved) {
       this.Books = bookSaved;
     }
@@ -42,7 +46,7 @@ class Book {
 
   // Writes the books list into the localStorage
   writeBooks() {
-    localStorage.setItem("books", JSON.stringify(this.Books));
+    localStorage.setItem('books', JSON.stringify(this.Books));
   }
 }
 
@@ -53,15 +57,15 @@ const displayBook = (book) => {
   const bookHolderHTML = `  
     <h4 class="book-title"><em>"${book.title}" by <span>${book.author}</span></em> </h4>  
     <button class="btn-remove" id=${book.id}>Remove</button>`;
-  const bookHolder = document.createElement("div");
-  bookHolder.classList.add("book-holder");
+  const bookHolder = document.createElement('div');
+  bookHolder.classList.add('book-holder');
   bookHolder.innerHTML = bookHolderHTML;
   bookShelf.appendChild(bookHolder);
 };
 
 // Reads all books from local storage and renders the result
 const drawAllBooks = () => {
-  bookShelf.innerHTML = "";
+  bookShelf.innerHTML = '';
   const Books = Buk.readBooks();
   Books.forEach((element, index) => {
     if (index < 25) {
@@ -76,28 +80,59 @@ const addBook = () => {
   Buk.title = titleInput.value;
   Buk.author = titleInput.value;
   Buk.id = Date.now();
-  if (titleInput.value !== "" && authorInput.value !== "") {
+  if (titleInput.value !== '' && authorInput.value !== '') {
     Buk.addBook();
     Buk.writeBooks();
     displayBook({
       title: titleInput.value,
       author: authorInput.value,
     });
-    titleInput.value = "";
-    authorInput.value = "";
+    titleInput.value = '';
+    authorInput.value = '';
   }
 };
+
+// Setting the date
+const d = new Date();
+newDate.innerHTML = d.toUTCString();
+
+function handleNavigation(target) {
+  if (target.innerHTML === 'List') {
+    booklist.style.display = 'flex';
+    addNewBook.style.display = 'none';
+    contactInfo.style.display = 'none';
+  }
+  if (target.innerHTML === 'Add new') {
+    booklist.style.display = 'none';
+    addNewBook.style.display = 'flex';
+    contactInfo.style.display = 'none';
+  }
+  if (target.innerHTML === 'Contact') {
+    booklist.style.display = 'none';
+    addNewBook.style.display = 'none';
+    contactInfo.style.display = 'flex';
+  }
+}
+
 // Event listener for 'Add new Button'
-addButton.addEventListener("click", addBook);
+addButton.addEventListener('click', addBook);
 
 // Event listener for 'Add new Button'
 document.body.addEventListener(
-  "click",
+  'click',
   (event) => {
-    if (event.target.className === "btn-remove") {
+    if (event.target.className === 'btn-remove') {
       Buk.removeBook(event.target.id);
       drawAllBooks();
+    } else if (event.target.className === 'nav-link') {
+      handleNavigation(event.target);
     }
   },
-  true
+  true,
 );
+
+// menuList.forEach((element) => {
+//   element.addEventListener('click', () => {
+//     handleNavigation(element);
+//   });
+// });
