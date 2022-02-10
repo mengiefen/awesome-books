@@ -74,6 +74,7 @@ body > *:not(.footer) {
 #book-list {
   display: flex;
   flex-direction: column;
+  scrollbar-color: #2b7a78 #edf1f1;
 }
 
 #book-shelf {
@@ -166,7 +167,7 @@ h4 span {
 }
 
 .btn-remove {
-  padding: 8.5px;
+  padding: 6px 8.5px;
   border-radius: 5px;
   outline: none;
   border: none;
