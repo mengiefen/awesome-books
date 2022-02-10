@@ -202,7 +202,8 @@ input:active {
 
 .info {
   padding-bottom: 1.5%;
-  padding-top: 7rem;
+  padding-top: 6rem;
+  font-weight: 600;
 }
 
 .specific-info {
@@ -211,6 +212,7 @@ input:active {
 
 .this-info {
   padding-left: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .footer {
