@@ -21,6 +21,7 @@ body > *:not(.footer) {
   padding: 0 6%;
 }
 
+/* Header and Navigation */
 .header {
   position: fixed;
   top: 0;
@@ -71,6 +72,7 @@ body > *:not(.footer) {
   }
 }
 
+/* Style for the Book List Page */
 #book-list {
   display: flex;
   flex-direction: column;
@@ -104,12 +106,41 @@ body > *:not(.footer) {
   width: 50%;
 }
 
+.book-holder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 99%;
+  padding: 0.5rem;
+  margin-bottom: 2.5px;
+}
+
+.book-holder:nth-child(even) {
+  background: #d9dddd;
+}
+
+.book-holder:nth-child(odd) {
+  background: #bfcaca;
+}
+
+.btn-remove {
+  padding: 6px 8.5px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  background: #2b7a78;
+  color: #def2f1;
+  cursor: pointer;
+  font-family: Lato, sans-serif;
+}
+
 @media screen and (max-width: 992px) {
   .wrapper-book-entry {
     width: 70%;
   }
 }
 
+/* Styles for Add New Book Page */
 form {
   padding-top: 7rem;
   display: flex;
@@ -149,34 +180,6 @@ h4 span {
   font-weight: 700;
 }
 
-.book-holder {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 99%;
-  padding: 0.5rem;
-  margin-bottom: 2.5px;
-}
-
-.book-holder:nth-child(even) {
-  background: #d9dddd;
-}
-
-.book-holder:nth-child(odd) {
-  background: #bfcaca;
-}
-
-.btn-remove {
-  padding: 6px 8.5px;
-  border-radius: 5px;
-  outline: none;
-  border: none;
-  background: #2b7a78;
-  color: #def2f1;
-  cursor: pointer;
-  font-family: Lato, sans-serif;
-}
-
 #btn-add {
   padding: 12px;
   align-self: flex-end;
@@ -192,6 +195,7 @@ input:active {
   border-bottom: 3px solid #2b7a78;
 }
 
+/* Styles for Contact Page */
 #contact {
   display: none;
   flex-direction: column;
@@ -215,6 +219,7 @@ input:active {
   margin-bottom: 1.5rem;
 }
 
+/* Styles for Page Footer */
 .footer {
   position: fixed;
   bottom: 0;

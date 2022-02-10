@@ -50,6 +50,7 @@ class Book {
   }
 }
 
+// Create new instance of Book
 const Buk = new Book();
 
 // Renders each book with single row
@@ -74,8 +75,10 @@ const drawAllBooks = () => {
   });
 };
 
+// Renders book at page load
 drawAllBooks();
 
+// Add single book and writes to local storage
 const addBook = () => {
   Buk.title = titleInput.value;
   Buk.author = titleInput.value;
@@ -96,6 +99,7 @@ const addBook = () => {
 const d = new Date();
 newDate.innerHTML = d.toUTCString();
 
+// Handles navigation for Single Page Application(SPA)
 function handleNavigation(target) {
   if (target.innerHTML === 'List') {
     booklist.style.display = 'flex';
@@ -117,7 +121,7 @@ function handleNavigation(target) {
 // Event listener for 'Add new Button'
 addButton.addEventListener('click', addBook);
 
-// Event listener for 'Add new Button'
+// Event listener for 'Add new Button', and Nav Items
 document.body.addEventListener(
   'click',
   (event) => {
@@ -130,9 +134,3 @@ document.body.addEventListener(
   },
   true,
 );
-
-// menuList.forEach((element) => {
-//   element.addEventListener('click', () => {
-//     handleNavigation(element);
-//   });
-// });
