@@ -96,8 +96,8 @@ const addBook = () => {
 };
 
 // Setting the date
-const d = new Date();
-newDate.innerHTML = d.toUTCString();
+const date = new Date();
+newDate.innerHTML = date.toUTCString();
 
 // Handles navigation for Single Page Application(SPA)
 function handleNavigation(target) {
