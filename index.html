@@ -10,28 +10,62 @@
 </head>
 
 <body>
-  <div class="container">
-    <h1>All Awesome Books</h1>
+
+  <!-- Page Header -->
+  <header class="header">
+    <h2 class="logo">Awesome Books</h2>
+    <ul class="navbar">
+      <li class="nav-item"><a class="nav-link" href="#book-list">List</a></li>
+      <li class="nav-item"><a class="nav-link" href="#add-new-book">Add new</a>
+      </li>
+      <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+    </ul>
+  </header>
+
+  <!-- Shows current date -->
+  <div id="current-date"></div>
+  <section id="book-list">
+    <h1 class="heading1">All Awesome Books</h1>
     <div id="book-shelf"></div>
-    <div class="border"></div>
-    <div class="border"></div>
-    <div class="wrapper-book-entry">
-      <h2 class="heading2">Add new books</h2>
-      <form>
-        <ul class="book-entry">
-          <li><input type="text" id="title" name="book-title"
-              placeholder="Title" required>
-          </li>
-          <li>
-            <input type="text" id="author" name="book-author"
-              placeholder="Author">
-          </li>
-        </ul>
-        <button id="btn-add" type="button">Add new book</button>
-      </form>
-    </div>
-  </div>
-  <script src="scripts/index2.js"></script>
+  </section>
+
+  <!-- Add New Page -->
+  <section id="add-new-book">
+    <h1 class="heading1">Add new books</h1>
+    <form>
+      <ul class="book-entry">
+        <li><input type="text" id="title" name="book-title" placeholder="Title"
+            required>
+        </li>
+        <li>
+          <input type="text" id="author" name="book-author"
+            placeholder="Author">
+        </li>
+      </ul>
+      <button id="btn-add" type="button">Add new book</button>
+    </form>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h1 class="heading1">Contact Information</h1>
+    <p class="info">
+      Do you have any questions or you just want to say 'Hello'?
+    </p>
+    <ul class="specific-info">
+      <li class="this-info">Our e-mail: mail@mail.com</li>
+      <li class="this-info">Our phone number: 0043586534422</li>
+      <li class="this-info">Our address: Streetname 22, 84503 City, Country</li>
+    </ul>
+  </section>
+
+  <!-- Page Footer -->
+  <footer class="footer">
+    <h2>&copy; Some rights are reserved.</h2>
+  </footer>
+
+
+  <script src="scripts/index.js"></script>
 </body>
 
 </html>

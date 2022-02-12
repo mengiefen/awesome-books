@@ -1,42 +1,70 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
-body {
-  background: #657786;
-}
-
-h1 {
-  font-size: 2.8rem;
-  align-self: center;
-  color: #0e3a38;
-  font-weight: 900;
-  text-transform: uppercase;
-  margin: 1.5rem auto;
-}
-
-html {
-  font-size: 10px;
-  font-family: Lato, sans-serif;
-}
-
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-.container {
-  margin: 2.5vh 20vh;
-  max-width: 95vw;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  border-radius: 5px;
-  background: #e6e9e9;
-  padding: 0 4rem;
-  margin-bottom: 0;
-  margin-top: 0;
+html {
+  font-size: 12px;
+  font-family: Lato, sans-serif;
+}
+
+body {
   height: 100vh;
-  scrollbar-color: #2b7a78 #e6e9e9;
+  background: #edf1f1;
+}
+
+body > *:not(.header),
+body > *:not(.footer) {
+  padding: 0 6%;
+}
+
+/* Header and Navigation */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 8vh;
+  background: #e5ebeb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 1px 3px 1px 1px #bfcaca;
+}
+
+.logo {
+  color: #2b7a78;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+.navbar {
+  list-style: none;
+  display: flex;
+  font-size: 1.5rem;
+}
+
+.nav-item {
+  padding: 0 2rem;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: #0e3a38;
+}
+
+.nav-item a:hover,
+.nav-item a:active {
+  color: #2b7a78;
+}
+
+#current-date {
+  font-size: 1.2rem;
+  padding-top: 9vh;
+  text-align: right;
+  color: #2b7a78;
 }
 
 @media screen and (max-width: 768px) {
@@ -45,16 +73,25 @@ html {
   }
 }
 
+/* Style for the Book List Page */
+#book-list {
+  display: flex;
+  flex-direction: column;
+  scrollbar-color: #2b7a78 #edf1f1;
+}
+
 #book-shelf {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 2rem 0;
-  border: 3px solid #2b7a78;
-  height: 55vh;
+  padding: 1rem 0;
+  margin-top: 2rem;
+  max-height: 70vh;
   overflow-y: scroll;
-  margin-bottom: 2rem;
+  border: 1px solid #bfcaca;
+  border-radius: 10px;
+  box-shadow: 5px 10px 8px 10px #bfcaca;
 }
 
 .border {
@@ -65,62 +102,20 @@ html {
   margin-bottom: 2px;
 }
 
-.wrapper-book-entry {
-  align-self: center;
+#add-new-book {
+  display: none;
+  flex-direction: column;
+  margin: 4vh auto 0 auto;
   width: 50%;
-}
-
-@media screen and (max-width: 992px) {
-  .wrapper-book-entry {
-    width: 70%;
-  }
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.book-entry {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-}
-
-.heading2 {
-  font-size: 24px;
-  text-align: center;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
-  color: #2b7a78;
-}
-
-input {
-  outline: none;
-  padding: 12px 5px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  width: 100%;
-  border: 0.5px solid lightgray;
-}
-
-h4 {
-  font-size: 16px;
-  font-weight: 400;
-  padding: 5px 0;
-}
-
-h4 span {
-  font-weight: 900;
 }
 
 .book-holder {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 92%;
-  padding: 0.5rem 2rem 0.5rem 2rem;
-  margin-bottom: 2.5px;
+  width: 99%;
+  padding: 1rem;
+  margin-bottom: 0;
 }
 
 .book-holder:nth-child(even) {
@@ -138,6 +133,54 @@ h4 span {
   border: none;
   background: #2b7a78;
   color: #def2f1;
+  cursor: pointer;
+  font-family: Lato, sans-serif;
+}
+
+@media screen and (max-width: 992px) {
+  .wrapper-book-entry {
+    width: 70%;
+  }
+}
+
+/* Styles for Add New Book Page */
+form {
+  padding-top: 7rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-entry {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.heading1 {
+  font-size: 2.2rem;
+  text-align: center;
+  color: #2b7a78;
+  text-transform: uppercase;
+}
+
+input {
+  outline: none;
+  padding: 12px 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid #d9dddd;
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: 400;
+  padding: 5px 0;
+  font-family: Lato, sans-serif;
+}
+
+h4 span {
+  font-weight: 700;
 }
 
 #btn-add {
@@ -145,9 +188,52 @@ h4 span {
   align-self: flex-end;
   background: #2b7a78;
   color: white;
+  cursor: pointer;
+  font-family: Lato, sans-serif;
+  font-weight: 600;
 }
 
 input:focus,
 input:active {
   border-bottom: 3px solid #2b7a78;
+}
+
+/* Styles for Contact Page */
+#contact {
+  display: none;
+  flex-direction: column;
+  font-size: 1.5rem;
+  margin: 4% auto;
+  align-items: center;
+}
+
+.info {
+  padding-bottom: 1.5%;
+  padding-top: 6rem;
+  font-weight: 600;
+}
+
+.specific-info {
+  padding-left: 4rem;
+}
+
+.this-info {
+  padding-left: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Styles for Page Footer */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 8vh;
+  border-top: 0.5px solid #d9dddd;
+}
+
+.footer h2 {
+  font-size: 1.4rem;
+  color: #2b7a78;
 }
